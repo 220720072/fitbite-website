@@ -105,7 +105,7 @@
             <p>Already have an account? <a href="#" onclick="toggleForms()">Sign In</a></p>
         </div>
         <div class="back">
-            <p><a href="YOUR_WEBSITE_URL">Back to Website</a></p>
+            <p><a href="https://sites.google.com/lfpsdelhi.com/fitbite/more/sign-in-log-in">Back to Website</a></p>
         </div>
     </div>
 
@@ -115,7 +115,11 @@
             const logInForm = document.getElementById('log-in');
             signInForm.style.display = signInForm.style.display === 'none' ? 'block' : 'none';
             logInForm.style.display = logInForm.style.display === 'none' ? 'block' : 'none';
-        }
+
+         google.script.run.withSuccessHandler(function() {
+          window.location.href = "https://sites.google.com/lfpsdelhi.com/fitbite/more/sign-in-log-in";  // Redirect to a website after email is sent
+        }).sendRegistrationEmail(email);
+      });
     </script>
 </body>
 </html>
